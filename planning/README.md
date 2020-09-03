@@ -2,7 +2,10 @@
 
 ## Projection Description
 
-This is a paired built app by Thomas Caldwell and Anyl Pascal. The app is call fetchGoal - it will be for all of the football/soccer geeks across the world who like to do nothing more than read through all of the facts and figures of all the top clubs in the world.
+This is a paired built app by Thomas Caldwell and Anyl Pascal.
+Both team members will be working on the front and backend but Anyl will be taking the lead on the backend and Thomas the frontend.
+
+The app is call fetchGoal - it will be for all of the football/soccer geeks across the world who like to do nothing more than read through all of the facts and figures of all the top clubs in the world.
 
 The users will have access to the homepage where they will be able to choose which league they want to learn more on. Once they have chosen which league they will be given the option to which club they would like to read more on the next page.
 
