@@ -1,3 +1,5 @@
+// Short description outlining technologies used and team members. 
+
 import React, { Component } from 'react';
 
 class Aboutus extends Component {
