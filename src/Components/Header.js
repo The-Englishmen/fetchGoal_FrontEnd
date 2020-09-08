@@ -5,14 +5,14 @@ import React, { Component } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import  {LinkContainer} from 'react-router-bootstrap';
-import fetchlogo from '/Users/thomascaldwell/sei/projects/fetchGoal_FrontEnd/fetchgoal/src/fetchgoallogo.png';
+
 
 class Header extends Component {
 	render() {
         return (
         <Navbar className="p-3 mb-2 bg-success text-white"collapseOnSelect variant='light' expand='md'>
 			<LinkContainer to='/home'>
-				<Navbar.Brand><img src={fetchlogo} alt='logo'
+				<Navbar.Brand><img src='' alt='logo'
 				height={50}/></Navbar.Brand>
 			</LinkContainer>
 			<Navbar.Toggle aria-controls='basic-navbar-nav' />
