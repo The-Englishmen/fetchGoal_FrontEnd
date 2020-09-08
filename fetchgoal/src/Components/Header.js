@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import  {LinkContainer} from 'react-router-bootstrap';
-import fetchlogo from '/Users/thomascaldwell/sei/projects/fetchGoal_FrontEnd/fetchgoal/src/fetchgoallogo.png';
+import fetchlogo from 'fetchgoal/src/fetchgoallogo.png';
 
 class Header extends Component {
 	render() {
