@@ -5,7 +5,6 @@ import axios from 'axios';
 import { Route } from 'react-router';
 import Home from './Components/Home';
 
-const key = process.env.REACT_APP_MYAPI_KEY; /// api key in a varible for use later
 const url = 'http://localhost:8000/artists/';
 class App extends Component {
 	constructor(props) {
@@ -17,12 +16,12 @@ class App extends Component {
 	}
 	componentDidMount() {
 		axios('http://localhost:8000/artists/')
-			.then((json) => {
-				this.setState({ data: json.data });
-			})
-			.catch(console.error);
+		.then((json) => {
+			this.setState({ data: json.data });
+		})
+		.catch(console.error);
 	}
-
+	
 	render() {
 		return (
 			<div>
