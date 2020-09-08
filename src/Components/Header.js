@@ -12,7 +12,7 @@ class Header extends Component {
         return (
         <Navbar className="p-3 mb-2 bg-success text-white"collapseOnSelect variant='light' expand='md'>
 			<LinkContainer to='/home'>
-				<Navbar.Brand><img src={fetchlogo} alt='logo'
+				<Navbar.Brand><img src='' alt='logo'
 				height={50}/></Navbar.Brand>
 			</LinkContainer>
 			<Navbar.Toggle aria-controls='basic-navbar-nav' />
