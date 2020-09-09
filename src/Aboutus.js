@@ -1,13 +1,20 @@
-// Short description outlining technologies used and team members. 
+// Short description outlining technologies used and team members.
 
-import React from 'react';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
-const Aboutus = () => {
-	return (
-		<div>
-			
-		</div>
-	);
-};
+class Aboutus extends Component {
+	render() {
+		return (
+			<div>
+				<Link className='text-white' exact to={`/home/`}>
+					<button type='button' class='btn btn-secondary btn-sm'>
+						Go Home
+					</button>
+				</Link>
+			</div>
+		);
+	}
+}
 
 export default Aboutus;

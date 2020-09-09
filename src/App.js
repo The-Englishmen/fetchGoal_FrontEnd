@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Header from './Header';
-import Home from './Home'
+import Home from './Home';
+import Fedarations from './Fedarations';
+import Aboutus from './Aboutus'
+import Leagues from './Leagues'
 import { Route } from 'react-router-dom';
 
 class App extends Component {
@@ -25,9 +28,29 @@ class App extends Component {
 				<Header />
 				<Route
 					exact
-					path='/'
+					path='/home'
 					render={() => {
-						return <Home data={this.state.data} />; /// sending data down to dashboard component
+						return <Home data={this.state.data} />; /// sending data down to home component
+					}}
+				/>
+				<Route
+					exact
+					path='/fedarations'
+					render={() => {
+						return <Fedarations data={this.state.data} />; /// sending data down to fedarations component
+					}}
+				/>
+				<Route
+					exact
+					path='/leagues'
+					render={() => {
+						return <Leagues data={this.state.data} />; /// sending data down to fedarations component
+					}}
+				/>
+				<Route
+					path='/about-us'
+					render={() => {
+						return <Aboutus />;
 					}}
 				/>
 			</div>
