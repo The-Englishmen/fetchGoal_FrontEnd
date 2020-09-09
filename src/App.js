@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
-import Header from './Components/Header.js';
 import axios from 'axios';
-import { Route } from 'react-router';
-import Home from './Components/Home';
+import Header from './Header';
+import Home from './Home'
+import { Route } from 'react-router-dom';
 
-const url = 'http://localhost:8000/artists/';
 class App extends Component {
 	constructor(props) {
 		super(props);
@@ -15,22 +13,21 @@ class App extends Component {
 		};
 	}
 	componentDidMount() {
-		axios('http://localhost:8000/artists/')
-		.then((json) => {
-			this.setState({ data: json.data });
-		})
-		.catch(console.error);
+		axios('https://jsonplaceholder.typicode.com/posts/1/comments')
+			.then((json) => {
+				this.setState({ data: json.data });
+			})
+			.catch(console.error);
 	}
-	
 	render() {
 		return (
 			<div>
 				<Header />
 				<Route
 					exact
-					path='/leagues'
+					path='/'
 					render={() => {
-						return <Home data={this.state.data} />;
+						return <Home data={this.state.data} />; /// sending data down to dashboard component
 					}}
 				/>
 			</div>
