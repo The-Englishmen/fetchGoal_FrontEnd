@@ -6,7 +6,7 @@ class Home extends Component {
 		return (
 			<div>
 				{this.props.data.map((data, index) => (
-					<p>
+					<p key={index}>
 						Hello, {data.name} from {data.email}!
 					</p>
 				))}

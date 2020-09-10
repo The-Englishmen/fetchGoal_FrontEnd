@@ -9,7 +9,7 @@ class Leagues extends Component {
 		return (
 			<div>
 				{this.props.data.map((data, index) => (
-					<div>
+					<div key={index}>
 						<h1>{data.name}</h1>
 					</div>
 				))}

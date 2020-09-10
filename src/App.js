@@ -16,7 +16,7 @@ class App extends Component {
 		};
 	}
 	componentDidMount() {
-		axios('https://jsonplaceholder.typicode.com/posts/1/comments')
+		axios('https://whispering-garden-05173.herokuapp.com/team/')
 			.then((json) => {
 				this.setState({ data: json.data });
 			})
@@ -37,7 +37,7 @@ class App extends Component {
 					exact
 					path='/fedarations'
 					render={() => {
-						return <Fedarations data={this.state.data} />; /// sending data down to fedarations component
+						return <Fedarations />; /// sending data down to fedarations component
 					}}
 				/>
 				<Route
