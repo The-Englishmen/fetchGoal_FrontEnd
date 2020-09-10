@@ -7,8 +7,8 @@ class Aboutus extends Component {
 	render() {
 		return (
 			<div>
-				<Link className='text-white' exact to={`/home/`}>
-					<button type='button' class='btn btn-secondary btn-sm'>
+				<Link className='text-white' exact to ={`/home/`}>
+					<button type='button' className='btn btn-secondary btn-sm'>
 						Go Home
 					</button>
 				</Link>

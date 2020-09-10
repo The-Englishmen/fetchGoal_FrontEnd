@@ -9,7 +9,9 @@ class Fedarations extends Component {
 			///setting State for data being brought in below
 			data: [],
 		};
-	}
+    }
+    
+
 	componentDidMount() {
 		axios('https://whispering-garden-05173.herokuapp.com/federation/')
 			.then((json) => {
@@ -19,6 +21,7 @@ class Fedarations extends Component {
 	}
 
 	render() {
+        console.log(this.state.data);
 		return (
 			<div>
 				{this.state.data.map((data, index) => (

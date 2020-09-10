@@ -3,9 +3,10 @@ import axios from 'axios';
 import Header from './Header';
 import Home from './Home';
 import Fedarations from './Fedarations';
-import Aboutus from './Aboutus'
-import Leagues from './Leagues'
-import { Route } from 'react-router-dom';
+import Aboutus from './Aboutus';
+import Leagues from './Leagues';
+import { Route, Link } from 'react-router-dom';
+import Teams from './Teams';
 
 class App extends Component {
 	constructor(props) {
@@ -16,13 +17,14 @@ class App extends Component {
 		};
 	}
 	componentDidMount() {
-		axios('https://whispering-garden-05173.herokuapp.com/team/')
+		axios('https://whispering-garden-05173.herokuapp.com/team')
 			.then((json) => {
 				this.setState({ data: json.data });
 			})
 			.catch(console.error);
 	}
 	render() {
+		console.log(this.state.data);
 		return (
 			<div>
 				<Header />
@@ -44,15 +46,17 @@ class App extends Component {
 					exact
 					path='/leagues'
 					render={() => {
-						return <Leagues data={this.state.data} />; /// sending data down to fedarations component
+						return <Leagues />; /// sending data down to fedarations component
 					}}
 				/>
 				<Route
-					path='/about-us'
-					render={() => {
-						return <Aboutus />;
+					exact
+					path='/teams/:name'
+					render={(routerProps) => {
+						return <Teams match={routerProps.match} data={this.state.data} />; /// sending data down to Teams component
 					}}
 				/>
+				<Route exact path='/about-us' component={Aboutus} />
 			</div>
 		);
 	}

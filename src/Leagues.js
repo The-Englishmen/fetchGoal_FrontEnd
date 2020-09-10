@@ -3,23 +3,39 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import Teams from './Teams'
+import axios from 'axios'
+import Link from 'bootstrap'
 
 class Leagues extends Component {
-		render()  {
+	constructor() {
+		super();
+		this.state = {
+			///setting State for data being brought in below
+			data: [],
+		};
+	}
+
+	componentDidMount() {
+		axios('https://whispering-garden-05173.herokuapp.com/league/')
+			.then((json) => {
+				this.setState({ data: json.data });
+			})
+			.catch(console.error);
+	}
+	render() {
+		console.log(this.state.data);
 		return (
 			<div>
-				{this.props.data.map((data, index) => (
+				{this.state.data.map((data, index) => (
 					<div key={index}>
 						<h1>{data.name}</h1>
+						<img src={data.photo_url} alt='' />
+						<Link className='text-dark' exact to={`/teams${data.league}`}>
+							{data.name}{' '}
+							
+						</Link>
 					</div>
 				))}
-				<Route
-					exact
-					path='/teams'
-					render={() => {
-						return <Teams data={this.props.data} />; /// sending data down to teams component
-					}}
-				/>
 			</div>
 		);
 	}
