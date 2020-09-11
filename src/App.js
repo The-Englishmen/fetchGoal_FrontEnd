@@ -39,19 +39,18 @@ class App extends Component {
 					exact
 					path='/fedarations'
 					render={() => {
-						return <Fedarations />; /// sending data down to fedarations component
+						return <Fedarations />; /// routing fedarations component
 					}}
 				/>
 				<Route
 					exact
 					path='/leagues'
-					render={() => {
-						return <Leagues />; /// sending data down to fedarations component
-					}}
+						component={Leagues} ///routing leagues component
+
 				/>
 				<Route
 					exact
-					path='/teams/:name'
+					path='/teams'
 					render={(routerProps) => {
 						return <Teams match={routerProps.match} data={this.state.data} />; /// sending data down to Teams component
 					}}

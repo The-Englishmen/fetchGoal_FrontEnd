@@ -2,9 +2,9 @@
 
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import Teams from './Teams'
-import axios from 'axios'
-import Link from 'bootstrap'
+import Teams from './Teams';
+import axios from 'axios';
+import Link from 'bootstrap';
 
 class Leagues extends Component {
 	constructor() {
@@ -29,11 +29,7 @@ class Leagues extends Component {
 				{this.state.data.map((data, index) => (
 					<div key={index}>
 						<h1>{data.name}</h1>
-						<img src={data.photo_url} alt='' />
-						<Link className='text-dark' exact to={`/teams${data.league}`}>
-							{data.name}{' '}
-							
-						</Link>
+						<img src={data.photo_url} alt='League badge' />
 					</div>
 				))}
 			</div>

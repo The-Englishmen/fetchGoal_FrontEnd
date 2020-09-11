@@ -21,13 +21,13 @@ class Fedarations extends Component {
 	}
 
 	render() {
-        console.log(this.state.data);
 		return (
 			<div>
+			<h1>See Teams from these Federations</h1>
 				{this.state.data.map((data, index) => (
 					<div key={index}>
 						<h1>{data.name}</h1>
-						<img src={data.photo_url} alt='' />
+						<img src={data.photo_url} alt='Federation Badge' />
 					</div>
 				))}
 			</div>
