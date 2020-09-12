@@ -6,6 +6,8 @@ import Teams from './Teams';
 import axios from 'axios';
 import Link from 'bootstrap';
 
+import './Leagues.css'
+
 class Leagues extends Component {
 	constructor() {
 		super();
@@ -25,11 +27,15 @@ class Leagues extends Component {
 	render() {
 		console.log(this.state.data);
 		return (
-			<div>
+			<div className ='leagues'>
 				{this.state.data.map((data, index) => (
-					<div key={index}>
-						<h1>{data.name}</h1>
-						<img src={data.photo_url} alt='League badge' />
+					<div key={index} className='align-items-center'>
+						{/* <h1 className='col-sm text-center'>{data.name}</h1> */}
+						<img
+							className='rounded mx-auto d-block'
+							src={data.photo_url}
+							alt='team badge'
+						/>
 					</div>
 				))}
 			</div>
