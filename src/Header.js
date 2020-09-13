@@ -24,9 +24,9 @@ class Header extends Component {
 							<LinkContainer to='/leagues'>
 								<Nav.Link>Leagues</Nav.Link>
 							</LinkContainer>
-							{/* <LinkContainer to='/fedarations'>
-								<Nav.Link>Fedarations</Nav.Link>
-							</LinkContainer> */}
+							<LinkContainer to='/teams'>
+								<Nav.Link>Teams</Nav.Link>
+							</LinkContainer> 
 							<LinkContainer to='/about-us'>
 								<Nav.Link>About us</Nav.Link>
 							</LinkContainer>

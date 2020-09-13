@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import Teams from './Teams';
 import axios from 'axios';
-import Link from 'bootstrap';
+import Row from 'bootstrap';
 
 import './Leagues.css'
 
@@ -25,17 +25,17 @@ class Leagues extends Component {
 			.catch(console.error);
 	}
 	render() {
-		console.log(this.state.data);
 		return (
-			<div className ='leagues'>
-				{this.state.data.map((data, index) => (
-					<div key={index} className='align-items-center'>
-						{/* <h1 className='col-sm text-center'>{data.name}</h1> */}
-						<img
-							className='rounded mx-auto d-block'
-							src={data.photo_url}
-							alt='team badge'
-						/>
+			<div className='row'>
+				{this.state.data.map((data) => (
+					<div key={data.id} className='align-items-center'>
+						<div className='col-lg-4 col-sm-6'>
+							
+								<div className='box'>
+						 <p className='col-sm text-center'>{data.name}</p> 
+									<img className='img-fluid' src={data.photo_url} alt='leaguebadge' />
+								</div>
+						</div>
 					</div>
 				))}
 			</div>

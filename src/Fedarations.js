@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Card, Button} from 'bootstrap';
 import axios from 'axios'
 
 class Fedarations extends Component {
@@ -24,8 +23,8 @@ class Fedarations extends Component {
 		return (
 			<div>
 			<h1>See Teams from these Federations</h1>
-				{this.state.data.map((data, index) => (
-					<div key={index}>
+				{this.state.data.map((data) => (
+					<div key={data.id}>
 						<h1>{data.name}</h1>
 						<img src={data.photo_url} alt='Federation Badge' />
 					</div>

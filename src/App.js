@@ -24,7 +24,6 @@ class App extends Component {
 			.catch(console.error);
 	}
 	render() {
-		console.log(this.state.data);
 		return (
 			<div>
 				<Header />

@@ -1,3 +1,5 @@
-.leagues{
-    padding:2em;
+.box{
+    width:8em;
+    overflow:hidden;
+    padding: 1em;
 }
