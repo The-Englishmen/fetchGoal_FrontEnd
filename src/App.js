@@ -7,6 +7,7 @@ import Aboutus from './Aboutus';
 import Leagues from './Leagues';
 import { Route, Link } from 'react-router-dom';
 import Teams from './Teams';
+import Footer from './Footer';
 
 class App extends Component {
 	constructor(props) {
@@ -14,6 +15,7 @@ class App extends Component {
 		this.state = {
 			///setting State for data being brought in below
 			data: [],
+			teamSearch: '',
 		};
 	}
 	componentDidMount() {
@@ -23,7 +25,13 @@ class App extends Component {
 			})
 			.catch(console.error);
 	}
+	handleInput = (event) => {
+		this.setState({ searchTeam: event.target.value });
+	};
 	render() {
+		let filteredTeams = this.state.data.filter((team) => {
+			return team.name.includes(this.state.searchTeam);
+		});
 		return (
 			<div>
 				<Header />
@@ -34,6 +42,7 @@ class App extends Component {
 						return <Home data={this.state.data} />; /// sending data down to home component
 					}}
 				/>
+				{/* <Route exact path='/about-us' component={Footer} /> */}
 				<Route
 					exact
 					path='/fedarations'
@@ -44,14 +53,20 @@ class App extends Component {
 				<Route
 					exact
 					path='/leagues'
-						component={Leagues} ///routing leagues component
-
+					component={Leagues} ///routing leagues component
 				/>
 				<Route
 					exact
 					path='/teams'
-					render={(routerProps) => {
-						return <Teams match={routerProps.match} data={this.state.data} />; /// sending data down to Teams component
+					render={() => {
+						return (
+							<Teams
+								handleInput={this.handleInput}
+								searchTeam={this.state.searchTeam}
+								filteredTeams={filteredTeams}
+								data={this.state.data}
+							/>
+						); /// sending data down to Teams component
 					}}
 				/>
 				<Route exact path='/about-us' component={Aboutus} />
