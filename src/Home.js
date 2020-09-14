@@ -1,23 +1,31 @@
 // Home page - this will include 3 featured teams and navbar. Plus information on the site.
 import React, { Component } from 'react';
 import forFans from './forfans.jpg';
-import { Jumbotron, Button, Container, Card, CardGroup, Row } from 'react-bootstrap';
+import {
+	Jumbotron,
+	Button,
+	Container,
+	Card,
+	CardGroup,
+	Row,
+} from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
 import './Home.css';
 import CardColumns from 'react-bootstrap/CardColumns';
 import fetchFan from './1693.jpg';
-import Footer from './Footer.js'
+import Footer from './Footer.js';
 
 class Home extends Component {
 	render() {
 		return (
 			<>
 				<div>
-					<Jumbotron
+					<Jumbotron 
 						style={{
 							backgroundImage: `url(${forFans})`,
 							backgroundSize: 'cover',
 							width: '100%',
+							fluid: 'yes'
 						}}>
 						<Container className='container'>
 							<h1 className='display-2 text-white text-center text'>
@@ -40,8 +48,6 @@ class Home extends Component {
 									<Card.Body className=' p-3 mb-1 text-center'>
 										<Card.Title>{data.name}</Card.Title>
 										<Card.Text>
-											Some quick example text to build on the card title and
-											make up the bulk of the card's content.
 										</Card.Text>
 										<Button variant='primary'>Go somewhere</Button>
 									</Card.Body>
@@ -70,32 +76,25 @@ class Home extends Component {
 					</Row>
 					<h3 className='Lastest'> Most Recent added</h3>
 					<div>
-						<Card className='p-10'>
-							{this.props.data.slice(-1).map((data) => (
-								<Row >
-									<Card
-										key={data.id}
-										className='justify-content-center align-items-center align-content-center border-0 '>
-										<Col sm={4}>
-											<Card.Img
-												src={data.photo_url}
-												alt='club'
-												style={{ maxWidth: '8em' }}></Card.Img>
-										</Col>
-										<Col sm={4}>
-											<Card.Title>{data.name}</Card.Title>
-											<Card.Text>
-												Some quick example text to build on the card title and
-												make up the bulk of the card's content.
-											</Card.Text>
-										</Col>
-										<Col sm={4}>
-											<Button variant='primary'>Go somewhere</Button>
-										</Col>
-									</Card>
-								</Row>
+						<CardGroup className='p-10'>
+							{this.props.data.slice(2, 5).map((data) => (
+								<Card
+									key={data.id}
+									className='justify-content-center align-items-center align-content-center border-0 '>
+									<img
+										src={data.photo_url}
+										alt='club'
+										style={{ maxWidth: '7em' }}></img>
+									<Card.Body className=' p-3 mb-1 text-center'>
+										<Card.Title>{data.name}</Card.Title>
+										<Card.Text>
+					
+										</Card.Text>
+										<Button variant='primary'>Go somewhere</Button>
+									</Card.Body>
+								</Card>
 							))}
-						</Card>
+						</CardGroup>
 					</div>
 					<Footer />
 				</div>

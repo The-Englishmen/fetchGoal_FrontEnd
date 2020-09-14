@@ -8,6 +8,7 @@ import Leagues from './Leagues';
 import { Route, Link } from 'react-router-dom';
 import Teams from './Teams';
 import Footer from './Footer';
+// import Search from './Search';
 
 class App extends Component {
 	constructor(props) {

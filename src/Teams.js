@@ -1,74 +1,72 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import {
-
-	Button,
-	Container,
-	Card,
-
-} from 'react-bootstrap';
-class Team extends Component {
-	constructor() {
-		super();
-		this.state = {
-			///setting State for data being brought in below
-			data: [],
-		};
-	}
-
-	componentDidMount() {
-		axios('https://whispering-garden-05173.herokuapp.com/team/')
-			.then((json) => {
-				this.setState({ data: json.data });
-			})
-			.catch(console.error);
-	}
-
+import Search from './Search.js';
+import { Button, Container, Card } from 'react-bootstrap';
+import CardColumns from 'react-bootstrap/CardColumns';
+class Teams extends Component {
 	render() {
-		return (
-			<>
-				<Container>
-					<Form onChange={this.props.handleInput}>
-						<Row>
-							<Col>
-								<Form.Group>
-									<Form.Control type='text' placeholder='Search' />
-								</Form.Group>
-								<Form.Text className='text-muted text-center'>
-									Search by Team name
-								</Form.Text>
-							</Col>
-						</Row>
-					</Form>
-				</Container>
-				<div>
-					<Container>
-						{this.props.data.map((data) => (
-							<Card
-								key={data.id}
-								className='justify-content-center align-content-center border-0 '>
-								<img
-									src={data.photo_url}
-									alt='club'
-									style={{ maxWidth: '9em' }}></img>
-								<Card.Body className=''>
-									<Card.Title>{data.name}</Card.Title>
-									<Card.Text>
-										Some quick example text to build on the card title and make
-										up the bulk of the card's content.
-									</Card.Text>
-									<Button variant='primary'>Go somewhere</Button>
-								</Card.Body>
-							</Card>
-						))}
-					</Container>
-				</div>
-			</>
-		);
+		if (this.props.searchTeam) {
+			return (
+				<>
+				<Search />
+					
+					<CardColumns>
+						
+
+						{this.props.filteredTeams.map((data) => {
+							///maping through data to display information
+							return (
+								<Card
+									key={data.id}
+									className='justify-content-center align-content-center border-0 '>
+									<img
+										src={data.photo_url}
+										alt='club'
+										style={{ maxWidth: '9em' }}></img>
+									<Card.Body className=''>
+										<Card.Title>{data.name}</Card.Title>
+										<Card.Text>
+										</Card.Text>
+										<Button variant='primary'>Go somewhere</Button>
+									</Card.Body>
+								</Card>
+							); // list of chosen datasets plus link to take user to page
+						})}
+					</CardColumns>
+				</>
+			);
+		}
+		//console.log(this.props.data);
+		else {
+			return (
+				<>
+				<Search />
+
+					<CardColumns>
+						{this.props.data.map((data) => {
+							///maping through data to display information
+							return (
+								<Card key={data.id} className='border-0 text-center mt-5'>
+									<Card.Img
+										src={data.photo_url}
+										alt='club'
+										style={{ maxWidth: '5em', maxHeight: '6em', margin: '0 Auto'}}
+									/>
+									<Card.Body className=''>
+										<Card.Title className=''>
+											<p
+											style={{ fontSize: '0.3em' }}>{data.name}</p>
+										</Card.Title>
+										<Card.Text></Card.Text>
+										<Button>See More Information</Button>
+									</Card.Body>
+								</Card>
+							); // list of chosen datasets plus link to take user to page
+						})}
+					</CardColumns>
+				</>
+			);
+		}
 	}
 }
 
-export default Team;
+export default Teams;
