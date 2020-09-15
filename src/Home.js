@@ -1,6 +1,6 @@
 // Home page - this will include 3 featured teams and navbar. Plus information on the site.
 import React, { Component } from 'react';
-import forFans from './forfans.jpg';
+import forFans from './Images/forfans.jpg';
 import {
 	Jumbotron,
 	Button,
@@ -10,8 +10,8 @@ import {
 	Row,
 } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
-import './Home.scss';
-import fetchFan from './1693.jpg';
+import './Styling/Home.scss';
+import fetchFan from './Images/1693.jpg';
 import Footer from './Footer.js';
 
 class Home extends Component {

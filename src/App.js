@@ -5,9 +5,8 @@ import Home from './Home';
 import Fedarations from './Fedarations';
 import Aboutus from './Aboutus';
 import Leagues from './Leagues';
-import { Route,} from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Teams from './Teams';
-
 
 class App extends Component {
 	constructor(props) {

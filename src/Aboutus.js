@@ -4,9 +4,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Image, Container, Card } from 'react-bootstrap';
 
-import usHeader from './aboutusheader.png';
-import missingTeam from './addyourteambanner.png';
-import footballAd from './footballad.png';
+import usHeader from './Images/aboutusheader.png';
+import missingTeam from './Images/addyourteambanner.png';
+import footballAd from './Images/footballad.png';
 import Footer from './Footer';
 
 class Aboutus extends Component {

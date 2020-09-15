@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { LinkContainer } from 'react-router-bootstrap';
-import fetchlogo from './fetchgoal.logo.png';
+import fetchlogo from './Images/fetchgoal.logo.png';
 
 class Header extends Component {
 	render() {

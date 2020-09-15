@@ -4,10 +4,10 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Button, Card,Image } from 'react-bootstrap';
 import CardColumns from 'react-bootstrap/CardColumns';
-import footballAd from './footballad.png';
+import footballAd from './Images/footballad.png';
 
 
-import './Leagues.scss'
+import './Styling/Leagues.scss';
 
 
 class Leagues extends Component {
