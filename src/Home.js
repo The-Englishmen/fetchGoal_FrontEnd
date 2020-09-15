@@ -33,9 +33,9 @@ class Home extends Component {
 							<h2 className='display-9 text-white text-center'>For Fans</h2>
 						</Container>
 					</Jumbotron>
-					<h3 className='featured'> Featured Teams</h3>
+					<h3 className=' display-4 text-center'> Featured Teams</h3>
 					<div>
-						<CardGroup className='p-10'>
+						<CardGroup className='p-10 mt-5'>
 							{this.props.data.slice(22, 25).map((data, id) => (
 								<Card
 									key={data.id}
@@ -63,27 +63,29 @@ class Home extends Component {
 						</CardGroup>
 					</div>
 
-					<Row className='m-2'>
-						<Col xs={12} md={8}>
-							<img className='img-fluid' src={fetchFan} alt='Fetch user' />
-						</Col>
-						<Col xs={6} md={4} className=''>
+					<Col>
+						<img className='img-fluid' src={fetchFan} alt='Fetch user' />
+					</Col>
+					<Container>
+						<Col className='mt-3'>
 							<p>
 								FetchGoal is the only(that we know of), fan run football
 								information website.
 							</p>
-
-							<p className='lead text-center'>
-								Search and find information on football clubs from across the
-								globe. From huge household name like Barcalona and Manchester
-								United to newly formed clubs - you can get all the information
-								here.
-							</p>
 						</Col>
-					</Row>
-					<h3 className='Lastest'> Most Recent added</h3>
+					</Container>
+
+					<Container>
+						<p>
+							Search and find information on football clubs from across the
+							globe. From huge household name like Barcalona and Manchester
+							United to newly formed clubs - you can get all the information
+							here.
+						</p>
+					</Container>
+					<h3 className='display-4 text-center m-3'> Most Recent</h3>
 					<div>
-						<CardGroup className='p-10'>
+						<CardGroup className='p-10 mt-5'>
 							{this.props.data.slice(2, 5).map((data) => (
 								<Card
 									key={data.id}
@@ -91,7 +93,7 @@ class Home extends Component {
 									<img
 										src={data.photo_url}
 										alt='club'
-										style={{ maxWidth: '7em',maxHeight: '7em' }}></img>
+										style={{ maxWidth: '7em', maxHeight: '7em' }}></img>
 									<Card.Body className=' p-3 mb-1 text-center'>
 										<Card.Title>{data.name}</Card.Title>
 										<Card.Text></Card.Text>

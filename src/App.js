@@ -19,7 +19,7 @@ class App extends Component {
 		};
 	}
 	componentDidMount() {
-		axios('https://whispering-garden-05173.herokuapp.com/team')
+		axios('https://whispering-garden-05173.herokuapp.com/team/?format=json')
 			.then((json) => {
 				this.setState({ data: json.data });
 			})

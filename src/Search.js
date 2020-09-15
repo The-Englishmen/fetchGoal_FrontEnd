@@ -10,6 +10,7 @@ class Search extends Component {
 		this.state = {};
 	}
 	render() {
+        
 		return (
 			<Container>
 				<Form className='mt-3' onChange={this.props.handleInput}>

@@ -7,10 +7,11 @@ class Teams extends Component {
 		if (this.props.searchTeam) {
 			return (
 				<>
-					<Search  />
+					<h3 className='display-4 text-center mt-3'>All Teams</h3>
+					<Search />
 
 					<CardColumns>
-						{this.props.filteredTeams.map((data) => {
+						{this.props.filteredTeams.map((data, id) => {
 							///maping through data to display information
 							return (
 								<Card key={data.id} className='border-0 text-center mt-5'>
@@ -21,11 +22,13 @@ class Teams extends Component {
 											maxWidth: '5em',
 											maxHeight: '3.8em',
 											margin: '0 Auto',
+											padding: ''
+
 										}}
 									/>
 									<Card.Body className=''>
 										<Card.Title className=''>
-											<p style={{ fontSize: '0.8em' }}>{data.name}</p>
+											<p >{data.name}</p>
 										</Card.Title>
 										<Card.Text></Card.Text>
 										<Button
@@ -50,13 +53,14 @@ class Teams extends Component {
 		else {
 			return (
 				<>
+					<h3 className='display-4 text-center mt-3'>All Teams</h3>
 					<Search />
 
 					<CardColumns>
-						{this.props.data.map((data) => {
+						{this.props.data.map((data, id) => {
 							///maping through data to display information
 							return (
-								<Card key={data.id} className='border-0 text-center mt-5'>
+								<Card key={id} className='border-0 text-center mt-5'>
 									<Card.Img
 										src={data.photo_url}
 										alt='club'

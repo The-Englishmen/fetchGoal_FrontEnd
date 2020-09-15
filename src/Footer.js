@@ -5,8 +5,10 @@ class Footer extends Component {
 	render() {
 		return (
 			<>
-				<Navbar className='p-3 bg-light' expand='sm'>
-					<Navbar.Text>made with love @fetchGoal</Navbar.Text>
+				<Navbar className='p-3 bg-light mt-4 align-center' expand='md'>
+					<Navbar.Text>
+						made with love @fetchGoal
+					</Navbar.Text>
 				</Navbar>
 			</>
 		);
