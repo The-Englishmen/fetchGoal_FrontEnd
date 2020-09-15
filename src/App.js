@@ -5,10 +5,9 @@ import Home from './Home';
 import Fedarations from './Fedarations';
 import Aboutus from './Aboutus';
 import Leagues from './Leagues';
-import { Route, Link } from 'react-router-dom';
+import { Route,} from 'react-router-dom';
 import Teams from './Teams';
-import Footer from './Footer';
-// import Search from './Search';
+
 
 class App extends Component {
 	constructor(props) {
@@ -16,7 +15,7 @@ class App extends Component {
 		this.state = {
 			///setting State for data being brought in below
 			data: [],
-			teamSearch: '',
+			searchTeam: '',
 		};
 	}
 	componentDidMount() {

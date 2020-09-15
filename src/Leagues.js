@@ -1,12 +1,14 @@
 // display every league on site. Organize it with region 
 
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
-import Teams from './Teams';
 import axios from 'axios';
-import Row from 'bootstrap';
+import { Button, Card,Image } from 'react-bootstrap';
+import CardColumns from 'react-bootstrap/CardColumns';
+import footballAd from './footballad.png';
 
-import './Leagues.css'
+
+import './Leagues.scss'
+
 
 class Leagues extends Component {
 	constructor() {
@@ -26,19 +28,60 @@ class Leagues extends Component {
 	}
 	render() {
 		return (
-			<div className='row'>
-				{this.state.data.map((data) => (
-					<div key={data.id} className='align-items-center'>
-						<div className='col-lg-4 col-sm-6'>
-							
-								<div className='box'>
-						 <p className='col-sm text-center'>{data.name}</p> 
-									<img className='img-fluid' src={data.photo_url} alt='leaguebadge' />
-								</div>
-						</div>
-					</div>
-				))}
-			</div>
+			<>
+				<CardColumns>
+					{this.state.data.slice(1, 2).map((data) => {
+						///maping through data to display information
+						return (
+							<Card key={data.id} className='border-0 text-center mt-5'>
+								<Card.Img
+									src={data.photo_url}
+									alt='leaguebadge'
+									style={{
+										maxWidth: '5em',
+										maxHeight: '5em',
+										margin: '0 Auto',
+									}}
+								/>
+								<Card.Body className=''>
+									<Card.Title className=''>
+										<p style={{ fontSize: '0.9em' }}>{data.name}</p>
+									</Card.Title>
+									<Card.Text></Card.Text>
+									<Button>See More Information</Button>
+								</Card.Body>
+							</Card>
+						); // list of chosen datasets plus link to take user to page
+					})}
+				</CardColumns>
+				<Image src={footballAd} fluid />
+				<CardColumns>
+					{this.state.data.slice(5, 8).map((data) => {
+						///maping through data to display information
+						return (
+							<Card
+								key={data.id}
+								className='border-0 text-center mt-5 align-bottom'>
+								<Card.Img
+									src={data.photo_url}
+									alt='leaguebadge'
+									style={{
+										maxWidth: '10em',
+										margin: '0 Auto',
+									}}
+								/>
+								<Card.Body className=''>
+									<Card.Title className=''>
+										<p style={{ fontSize: '0.9em' }}>{data.name}</p>
+									</Card.Title>
+									<Card.Text></Card.Text>
+									<Button>See More Information</Button>
+								</Card.Body>
+							</Card>
+						); // list of chosen datasets plus link to take user to page
+					})}
+				</CardColumns>
+			</>
 		);
 	}
 }

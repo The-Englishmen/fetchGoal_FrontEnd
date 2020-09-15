@@ -10,8 +10,7 @@ import {
 	Row,
 } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
-import './Home.css';
-import CardColumns from 'react-bootstrap/CardColumns';
+import './Home.scss';
 import fetchFan from './1693.jpg';
 import Footer from './Footer.js';
 
@@ -20,12 +19,12 @@ class Home extends Component {
 		return (
 			<>
 				<div>
-					<Jumbotron 
+					<Jumbotron
 						style={{
 							backgroundImage: `url(${forFans})`,
 							backgroundSize: 'cover',
 							width: '100%',
-							fluid: 'yes'
+							fluid: 'yes',
 						}}>
 						<Container className='container'>
 							<h1 className='display-2 text-white text-center text'>
@@ -37,7 +36,7 @@ class Home extends Component {
 					<h3 className='featured'> Featured Teams</h3>
 					<div>
 						<CardGroup className='p-10'>
-							{this.props.data.slice(22, 25).map((data) => (
+							{this.props.data.slice(22, 25).map((data, id) => (
 								<Card
 									key={data.id}
 									className='justify-content-center align-items-center align-content-center border-0 '>
@@ -47,9 +46,17 @@ class Home extends Component {
 										style={{ maxWidth: '8em' }}></img>
 									<Card.Body className=' p-3 mb-1 text-center'>
 										<Card.Title>{data.name}</Card.Title>
-										<Card.Text>
-										</Card.Text>
-										<Button variant='primary'>Go somewhere</Button>
+										<Card.Text></Card.Text>
+										<Button
+											style={{
+												backgroundColor: '#ffdf00',
+												color: '#009c3b',
+												boxShadow:
+													'0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19)',
+											}}
+											className='border-0'>
+											SEE MORE
+										</Button>
 									</Card.Body>
 								</Card>
 							))}
@@ -84,13 +91,20 @@ class Home extends Component {
 									<img
 										src={data.photo_url}
 										alt='club'
-										style={{ maxWidth: '7em' }}></img>
+										style={{ maxWidth: '7em',maxHeight: '7em' }}></img>
 									<Card.Body className=' p-3 mb-1 text-center'>
 										<Card.Title>{data.name}</Card.Title>
-										<Card.Text>
-					
-										</Card.Text>
-										<Button variant='primary'>Go somewhere</Button>
+										<Card.Text></Card.Text>
+										<Button
+											style={{
+												backgroundColor: '#ffdf00',
+												color: '#009c3b',
+												boxShadow:
+													'0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19)',
+											}}
+											className='border-0'>
+											SEE MORE
+										</Button>
 									</Card.Body>
 								</Card>
 							))}

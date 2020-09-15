@@ -6,6 +6,7 @@ import { Image, Container, Card } from 'react-bootstrap';
 
 import usHeader from './aboutusheader.png';
 import missingTeam from './addyourteambanner.png';
+import footballAd from './footballad.png';
 
 class Aboutus extends Component {
 	render() {
@@ -14,11 +15,11 @@ class Aboutus extends Component {
 				<Image src={usHeader} fluid />
 				<Container>
 					<Card className='border-0 text-center mt-3 mb-3'>
-						<Card.Text style={{ fontSize: '1em' }}>
+						<Card.Text>
 							What Teams are included in FetchGoal?
 							<div
 								className='border-0 text-left p-2'
-								style={{ fontSize: '0.4em' }}>
+								style={{ fontSize: '0.6em' }}>
 								<li>All 6 main Governing body are included</li>
 								<li>
 									Top Leagues such as English Premier league, Spanish La Liga
@@ -36,11 +37,11 @@ class Aboutus extends Component {
 				<Image src={missingTeam} fluid />
 				<Container>
 					<Card className='border-0 text-center mt-3 mb-3'>
-						<Card.Text style={{ fontSize: '1em' }}>
+						<Card.Text>
 							Where do you get your information from?
 							<div
 								className='border-0 text-left p-2'
-								style={{ fontSize: '0.4em' }}>
+								style={{ fontSize: '0.6em' }}>
 								<li>We get our information from you guys the football fans</li>
 								<li>
 									Also such sites as Wikipedia - we search so you don't have to!
@@ -50,23 +51,23 @@ class Aboutus extends Component {
 						</Card.Text>
 					</Card>
 				</Container>
-				<Image src={missingTeam} fluid />
+				<Image src={footballAd} fluid />
 				<Container>
 					<Card className='border-0 text-center mt-3 mb-3'>
-						<Card.Text style={{ fontSize: '1em' }}>
-							Where do you get your information from?
+						<Card.Text>
+							How do you make money?
 							<div
 								className='border-0 text-left p-2'
-								style={{ fontSize: '0.4em' }}>
-								<li>We get our information from you guys the football fans</li>
+								style={{ fontSize: '0.6em' }}>
+								<li>The short answer is we dont</li>
 								<li>
-									Also such sites as Wikipedia - we search so you don't have to!
+									The longer answer is we sell ad space like the ones on this page to help with maintenance costs etc.
 								</li>
-								<li>We also have knowledge stored in the brain!</li>
+								<li>We do this for the fans</li>
 							</div>
 						</Card.Text>
 					</Card>
-				</Container>
+				</Container> 
 
 				<Link className='text-white' exact to={`/home/`}>
 					<button type='button' className='btn btn-secondary btn-sm'>

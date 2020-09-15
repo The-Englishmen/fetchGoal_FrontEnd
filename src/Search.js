@@ -12,13 +12,16 @@ class Search extends Component {
 	render() {
 		return (
 			<Container>
-				<Form onChange={this.props.handleInput}>
+				<Form className='mt-3' onChange={this.props.handleInput}>
 					<Row>
 						<Col>
 							<Form.Group>
-								<Form.Control type='text' placeholder='Search' />
+								<Form.Control
+									type='text'
+									placeholder='Search'
+								/>
 							</Form.Group>
-							<Form.Text className='text-muted text-center'>
+							<Form.Text className='text-center'>
 								Search by Team name
 							</Form.Text>
 						</Col>
