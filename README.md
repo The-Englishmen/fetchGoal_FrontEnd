@@ -1,6 +1,6 @@
 # fetchGoal_FrontEnd
 
-## By Thomas Caldwell & Anyl Tyon Pascal
+## By Thomas Caldwell & Anyl Pascal
 
 #Desription
 
