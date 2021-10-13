@@ -36,7 +36,7 @@ class App extends Component {
 				<Header />
 				<Route
 					exact
-					path='/home'
+					path='/'
 					render={() => {
 						return <Home data={this.state.data} />; /// sending data down to home component
 					}}
