@@ -18,7 +18,7 @@ class Header extends Component {
 					<Navbar.Toggle aria-controls='basic-navbar-nav' />
 					<Navbar.Collapse id='basic-navbar-nav'>
 						<Nav>
-							<LinkContainer to='/home'>
+							<LinkContainer to='/'>
 								<Nav.Link>Home</Nav.Link>
 							</LinkContainer>
 							<LinkContainer to='/leagues'>
@@ -26,17 +26,17 @@ class Header extends Component {
 							</LinkContainer>
 							<LinkContainer to='/teams'>
 								<Nav.Link>Teams</Nav.Link>
-							</LinkContainer> 
+							</LinkContainer>
 							<LinkContainer to='/about-us'>
 								<Nav.Link>About us</Nav.Link>
 							</LinkContainer>
 						</Nav>
 					</Navbar.Collapse>
-							<LinkContainer to='/home'>
-								<Navbar.Brand>
-									<img src={fetchlogo} alt='logo' height={40} />
-								</Navbar.Brand>
-							</LinkContainer>
+					<LinkContainer to='/home'>
+						<Navbar.Brand>
+							<img src={fetchlogo} alt='logo' height={40} />
+						</Navbar.Brand>
+					</LinkContainer>
 				</Navbar>
 			</>
 		);
@@ -44,5 +44,3 @@ class Header extends Component {
 }
 
 export default Header;
-
-
